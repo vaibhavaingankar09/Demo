@@ -1,8 +1,9 @@
 # Building htop
 
-htop is available on Ubuntu 16.10. Should you require a different version from those listed below you will need to build it.
+Below versions of htop are available in respective distributions at the time of this recipe creation:
 
-*    Ubuntu 16.04 has `2.0.2`
+*    Ubuntu 16.04 has `2.0.1`
+*    Ubuntu 16.10 has `2.0.2`
 
 The instructions provided below specify the steps to build htop version 2.0.2 on Linux on the IBM z Systems for RHEL 6.8/7.1/7.2, SLES 11-SP4/12/12-SP1 and Ubuntu 16.04.
 
