@@ -33,13 +33,9 @@ See instructions [here](https://github.com/openshift/origin/blob/master/CONTRIBU
      export OS_OUTPUT_GOPATH=1
      mkdir -p $GOPATH/src/github.com/openshift
      cd $GOPATH/src/github.com/openshift
-     git clone https://github.com/openshift/origin.git
-```
-_**Note:** You may need to fork above repository to your private one and clone in case you want to save your changes back to git server._
-
-```
-     cd origin
-     git checkout tags/v1.3.1 -b v1.3.1
+     git clone https://github.com/openshift/origin.git  
+     cd origin  
+     git checkout tags/v1.3.1 -b v1.3.1  
 
      cd $GOPATH/src/github.com/openshift/origin/vendor/golang.org/x/ # Replace sys package
      mv sys sys.bk
@@ -376,10 +372,10 @@ __Note:__ In order to use OpenShift Origin you must generate core OpenShift Dock
 
         +# Build and install Node.js
         +RUN wget http://www.haproxy.org/download/1.6/src/haproxy-1.6.9.tar.gz && tar xzvf haproxy-1.6.9.tar.gz && \
-        cd haproxy-1.6.9 && make TARGET=linux26 USE_OPENSSL=1 && make install
+        +cd haproxy-1.6.9 && make TARGET=linux26 USE_OPENSSL=1 && make install
         
         +RUN  mkdir -p /var/lib/haproxy/router/{certs,cacerts} && \
-              mkdir -p /var/lib/haproxy/{conf,run,bin,log} && \
+        +     mkdir -p /var/lib/haproxy/{conf,run,bin,log} && \
               touch /var/lib/haproxy        /conf/{{os_http_be,os_edge_http_be,os_tcp_be,os_sni_passthrough,os_reencrypt,os_edge_http_expose,os_edge_http_redirect}.map,haproxy.config} && \
              chmod -R 777 /var && \
         -    setcap 'cap_net_bind_service=ep' /usr/sbin/haproxy
@@ -582,7 +578,7 @@ __Note:__ In order to use OpenShift Origin you must generate core OpenShift Dock
 
 __Notes:__ 
   1. PERMISSIVE_GO=y argument is used to bypass a check for Go 1.6.  
-  2. There is one failing test case regarding HTTPProbeChecker, etc. which we can skip for this version.
+  2. There is one failing test case regarding HTTPProbeChecker, etc. which we can skip for this version. This is believed to be fixed in the newer version of OpenShift.
   3. If in case you require to rerun `make test` command, run `make update` first to update to clean up cache.
   4. If in case while running `oc cluster up` command, it starts pulling `openshift/origin:v1.3.1`, tag already created `openshift/origin:latest` image with `openshift/origin:v1.3.1`.
    
