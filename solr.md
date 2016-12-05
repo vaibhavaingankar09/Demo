@@ -1,4 +1,4 @@
-
+# Building Apache Solr
 The instructions provided below specify the steps to build Apache Solr version 6.3.0 on the IBM z Systems for RHEL 7.1/7.2/7.3, SLES 12-SP1/12-SP2 and Ubuntu 16.04/16.10.
 
 _**General Notes:**_ 	
@@ -73,7 +73,7 @@ _**Note:** ant version available in yum and zypper is very low version. It needs
   ./solr create -c samp
   ```
 
-####2.1)Expected Output 
+####2.2)Expected Output 
 * The solr start command will start the solr server on port 8983. `./solr create -c` samp command would create the samp as
   
   ```
@@ -82,7 +82,7 @@ _**Note:** ant version available in yum and zypper is very low version. It needs
   "QTime":720},"core":"samp"}
   ```
 
-_**Note:** If the solr create command fails due to any reason, please stop and start the solr server and then rerun the command._ 
+  _**Note:** If the solr create command fails due to any reason, please stop and start the solr server and then rerun the command._ 
 
 * After starting Solr, direct your Web browser to the Solr Admin Console at: `http://HOST_IP:8983/solr/` 
 
